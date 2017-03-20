@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <% properties.Objects.forEach(function(property){ %>
+      <div class="property">
+        <h1><%= property.Adres %></h1>
+      </div>
+    <% }); %>
+
+</body>
+</html>
