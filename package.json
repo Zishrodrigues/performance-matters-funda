@@ -1,0 +1,29 @@
+{
+  "name": "funda",
+  "version": "1.0.0",
+  "description": "serverside version of funda app",
+  "main": "app.js",
+  "scripts": {
+    "test": "test app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zishrodrigues/performance-matters-funda.git"
+  },
+  "keywords": [
+    "serverside",
+    "app",
+    "funda",
+    "express",
+    "minor"
+  ],
+  "author": "zishrodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zishrodrigues/performance-matters-funda/issues"
+  },
+  "homepage": "https://github.com/Zishrodrigues/performance-matters-funda#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
