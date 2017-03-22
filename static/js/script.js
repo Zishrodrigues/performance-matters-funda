@@ -1,2 +1,2 @@
-var header = document.getElementsByTagName("h1")[0];
-header.innerHTML = "JavaScript FTW!";
+var element = require('./elements.js');
+var test = require('./test.js');

@@ -7,7 +7,7 @@
 
     <% properties.Objects.forEach(function(property){ %>
       <div class="property">
-        <h1><%= property.Adres %></h1>
+        <a href="result/<%= property.Id %>"><%= property.Adres %></a>
       </div>
     <% }); %>
 

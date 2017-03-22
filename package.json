@@ -4,7 +4,8 @@
   "description": "serverside version of funda app",
   "main": "app.js",
   "scripts": {
-    "test": "test app"
+    "bundle": "browserify static/js/script.js > bundle.js",
+    "plz": "browserify --help"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,7 @@
     "express": "^4.15.2",
     "request": "^2.81.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "browserify": "^14.1.0"
+  }
 }

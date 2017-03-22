@@ -1,17 +1,17 @@
 var express = require('express');
-var path = require('path');
 var bodyParser = require('body-parser');
 var request = require('request');
 require('dotenv').config();
 var app = express();
 
 var apiUrl = process.env.APIURL;
+var detailUrl = process.env.DETAILURL;
 
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static('static'));
 app.use(bodyParser.json()); // to support JSON bodies
 app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
-
 app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 app.get('/', function (req, res) {
     res.render('pages/index');
@@ -30,16 +30,12 @@ app.post('/result', function(req, res) {
     }
 });
 
-// app.get('/result', function (req, res) {
-//     var property = '';
-//     load(property, callback);
-//     function callback(data) {
-//       res.render('pages/result', { properties: data });
-//     }
-// });
-
-app.listen(3000, function () {
-    console.log('app listening in port 3000');
+app.get('/result/:Id', function(req, res) {
+    var id = req.params.Id;
+    request(detailUrl + req.params.Id, function (error, response, body) {
+        var data = JSON.parse(body);
+        res.render('pages/detail', {properties: data});
+    });
 });
 
 function load(values, callback) {
@@ -49,3 +45,7 @@ function load(values, callback) {
     callback(JSON.parse(body));
   });
 }
+
+app.listen(3000, function () {
+    console.log('app listening in port 3000');
+});
