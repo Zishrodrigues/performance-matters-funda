@@ -12,3 +12,8 @@ This project uses the following packages:
 * browserify
 
 I use browserify to bundle my JS modules into bundle.js for client-side usage.
+
+## Wishlist
+
+* add css
+* add clientside JS functions
