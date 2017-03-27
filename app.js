@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.get('/', function (req, res) {
-    res.render('pages/stad');
+    res.render('pages/index');
 });
 
 app.get('/stad', function (req, res) {

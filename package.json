@@ -4,8 +4,9 @@
   "description": "serverside version of funda app",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "bundle": "browserify static/js/script.js > bundle.js",
-    "plz": "browserify --help"
+    "help": "browserify --help"
   },
   "repository": {
     "type": "git",

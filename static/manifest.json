@@ -1,0 +1,17 @@
+{
+    "short_name": "Bootstrap",
+    "long_name": "Twitter bootstrap documentationlel",
+    "start_url": "/homescreen=1",
+    "display": "standalone",
+    "theme_color": "#525252",
+    "background_color": "#ffffff",
+    "icons": [{
+    "src": "/favicon.ico",
+    "sizes": "32x32",
+    "type": "image/ico"
+    }, {
+    "src": "/apple-touch-icon.png",
+    "sizes": "180x180",
+    "type": "image/png"
+    }]
+}
