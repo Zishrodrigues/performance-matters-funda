@@ -24,7 +24,8 @@ app.get('/stad', function (req, res) {
 app.post('/result', function(req, res) {
     // res.send(req.body.place);
     var place = req.body.place;
-    load(place, callback);
+    var url = apiUrl;
+    load(place, url, callback);
     function callback(data) {
       res.render('pages/result', { properties: data });
     }
@@ -32,14 +33,19 @@ app.post('/result', function(req, res) {
 
 app.get('/result/:Id', function(req, res) {
     var id = req.params.Id;
-    request(detailUrl + req.params.Id, function (error, response, body) {
-        var data = JSON.parse(body);
-        res.render('pages/detail', {properties: data});
-    });
+    var url = detailUrl;
+    // request(detailUrl + req.params.Id, function (error, response, body) {
+    //     var data = JSON.parse(body);
+    //     res.render('pages/detail', {properties: data});
+    // });
+    load(id, url, callback);
+    function callback(data) {
+      res.render('pages/detail', { properties: data });
+    }
 });
 
-function load(values, callback) {
-  var url = apiUrl + '/' + values + '/100000-250000';
+function load(values, givenUrl, callback) {
+  var url = givenUrl + values;
   request(url, function(err, res, body) {
     if (err) console.warn(err);
     callback(JSON.parse(body));

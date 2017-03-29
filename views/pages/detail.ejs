@@ -5,12 +5,30 @@
 </head>
 <body class="container">
 
-      <div class="property">
+    <div class="detail">
         <h1>
             <%= properties.Adres %>
         </h1>
-        <img src="<%= properties.HoofdFoto %>" alt="foto">
-      </div>
+        <div>
+            <section>
+                <img src="<%= properties.HoofdFoto %>" alt="<%= properties.Adres %>">
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <%= properties.Postcode %> <%= properties.Woonplaats %>
+                    </li>
+                    <li>
+                        <%= properties.Aantalkamers %> kamers
+                    </li>
+                    <li>
+                        &euro;<%= properties.Koopprijs %>
+                    </li>
+                </ul>
+                <a href="<%= properties.URL %>" target="_blank">Meer informatie</a>
+            </section>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -1,3 +1,264 @@
-body {
-    background-color: grey;
+* {
+    margin:0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+/* FORM */
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transition: 1s;
+    margin: 0.5em;
+    animation: fade 1s;
+}
+
+@media screen and (min-width: 40em) {
+    form {
+        margin: 5em;
+    }
+}
+
+form label {
+    border: 0.4em #ffffff solid;
+    flex: 1;
+    height: 20em;
+    cursor: pointer;
+    margin: 0.5em;
+    min-width: 40%;
+    max-height: 10em;
+    background-size: cover;
+    background-position: center;
+    background-image: url('http://www.wiceklistwan.nl/wp-content/uploads/galleries/post-1216/full/Amsterdam-012.jpg');
+    transition: 0.3s;
+}
+
+form label:hover,
+form label:focus {
+    border: 0.4em #F7A100 solid;
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 40em) {
+    form label {
+        min-width: 20em;
+        max-height: none;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    form label:nth-of-type(3),
+    form label:nth-of-type(6),
+    form label:nth-of-type(9) {
+        min-width: 35%;
+    }
+}
+
+form input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    left: -100vw;
+}
+
+form input[type="radio"]:checked + label {
+  border: 0.4em #F7A100 solid;
+  transform: scale(1);
+}
+
+form input[type="radio"]:focus + label {
+  border: 0.4em #F7A100 solid;
+  transform: scale(1.1);
+}
+
+form button {
+    position: fixed;
+    padding:1em;
+    bottom:1em;
+    right:1em;
+    background-color: #F7A100;
+    border: 0.2em #F7A100 solid;
+    color: #ffffff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+form button:focus,
+form button:hover {
+    background-color: #60c5f8;
+    border: 0.2em #60c5f8 solid;
+}
+
+,
+form button:focus {
+    transform: scale(1.2);
+}
+
+/* OVERVIEW */
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main section {
+    flex: 1;
+    height: 20em;
+    min-width: 60%;
+    margin: 0.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+@media screen and (min-width: 40em) {
+    main section {
+        min-width: 20em;
+        max-width: 25em;
+        /*min-height: 20em;
+        max-height: none;*/
+    }
+}
+
+main section h2 {
+    position: absolute;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: #F7A100;
+    color: #ffffff;
+    padding:0.5em;
+    font-size: 1.2em;
+}
+
+main section h3 {
+    position: absolute;
+    right: 0.3em;
+    bottom: 0.3em;
+    background-color: #F7A100;
+    color: #ffffff;
+    padding:0.5em;
+    font-size: 1em;
+}
+
+main section .overviewImage {
+    overflow: hidden;
+}
+
+main section .overviewImage img {
+    height: 100%;
+}
+
+main section h1 a {
+    display: block;
+    background-color: #F7A100;
+    text-align: center;
+    padding: 0.7em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main section h1 a:hover,
+main section h1 a:focus {
+    background-color: #60c5f8;
+}
+
+main section h1 a::after {
+    position: absolute;
+  	left: 0;
+  	right: 0;
+  	top: 0;
+  	bottom: 0;
+  	content: '';
+    border: 0.3em #F7A100 solid;
+}
+
+main section h1 a:hover:after,
+main section h1 a:focus:after {
+    border: 0.3em #60c5f8 solid;
+}
+
+/* DETAIL */
+.detail {
+    border:0.3em #F7A100 solid;
+    width:100%;
+    margin:0.5em;
+}
+
+.detail a {
+    padding: 1em;
+    background-color: #F7A100;
+    margin:1em;
+}
+
+.detail .back {
+    background-color: #F7A100;
+}
+
+.detail h1 {
+    background-color: #F7A100;
+    padding: 0.5em;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+.detail div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin:0;
+    padding:0;
+}
+
+@media screen and (min-width: 40em) {
+    .detail div {
+        flex-direction: row;
+    }
+}
+
+.detail div section {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    height: auto;
+    flex:1;
+    min-width: none;
+    max-width: none;
+}
+
+.detail div section img {
+    height: auto;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+    .detail div section img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+.detail div section ul {
+    list-style-type: circle;;
+    padding:1em;
+}
+
+.detail div section ul li {
+    color: #F7A100;
+    font-size: 1.5em;
+    margin-top:0.5em;
+    margin-left: 1em;
+}
+
+.detail div section a {
+    margin:1em;
+    display: inline-block;
+    background-color: #60c5f8;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1em;
 }

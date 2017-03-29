@@ -4,11 +4,23 @@
     <% include ../partials/head %>
 </head>
 <body class="container">
-
-    <% properties.Objects.forEach(function(property){ %>
-      <div class="property">
-        <a href="result/<%= property.Id %>"><%= property.Adres %></a>
-      </div>
-    <% }); %>
+    <main>
+        <% properties.Objects.forEach(function(property){ %>
+            <section class="overview">
+                <h1>
+                    <a href="result/<%= property.Id %>"><%= property.Adres %></a>
+                </h1>
+                <div class="overviewImage">
+                    <img src="<%= property.FotoLarge %>" alt="<%= property.Adres %>">
+                </div>
+                <h2>
+                    &euro;<%= property.Koopprijs %>
+                </h2>
+                <h3>
+                    <%= property.Woonplaats %>
+                </h3>
+            </section>
+        <% }); %>
+    </main>
 </body>
 </html>

@@ -3,11 +3,11 @@
 //     // event.respondWith(new Response('hijacked!'));
 // });
 
-var cacheName = 'v2';
+var cacheName = 'v1';
 var cacheFiles = [
     '/css/style.css',
     '/js/script.js',
-    './'
+    '/'
 ];
 
 self.addEventListener('install', function(e) {
@@ -39,30 +39,30 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
     console.log('[ServiceWorker] Fetching', e.request.url );
 
-    e.respondWith(
-        caches.match(e.request).then(function(response) {
-            if (response) {
-                console.log('[serviceWorker] found in cache', e.request.url);
-                return response;
-            }
-
-            var requestClone = e.request.clone();
-            fetch(requestClone).then(function(response) {
-                if (!response) {
-                    console.log('[serviceWorker] no response from fetch');
-                    return response;
-                }
-
-                var responseClone = response.clone();
-                caches.open(cacheName).then(function(cache) {
-                    console.log('[serviceWorker] new data new');
-                    cache.put(e.request, responseClone);
-                    return response;
-                });
-            })
-            .catch(function(err) {
-                console.log('[serviceWorker] error fetching & caching new data');
-            });
-        })
-    );
+    // e.respondWith(
+    //     caches.match(e.request).then(function(response) {
+    //         if (response) {
+    //             console.log('[serviceWorker] found in cache', e.request.url);
+    //             return response;
+    //         }
+    //
+    //         var requestClone = e.request.clone();
+    //         fetch(requestClone).then(function(response) {
+    //             if (!response) {
+    //                 console.log('[serviceWorker] no response from fetch');
+    //                 return response;
+    //             }
+    //
+    //             var responseClone = response.clone();
+    //             caches.open(cacheName).then(function(cache) {
+    //                 console.log('[serviceWorker] new data new');
+    //                 cache.put(e.request, responseClone);
+    //                 return response;
+    //             });
+    //         })
+    //         .catch(function(err) {
+    //             console.log('[serviceWorker] error fetching & caching new data');
+    //         });
+    //     })
+    // );
 });
