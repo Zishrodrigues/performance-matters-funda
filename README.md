@@ -25,6 +25,20 @@ $ npm start
 ```
 If you get the message ```app listening in port 3000 ``` the server started successfully on localhost:3000.
 
+## Project overview
+
+My app uses a moodboard of images as a filtering method. Select your favorite images and get a search result based on your city of taste.
+
+![Moodboard page](https://raw.githubusercontent.com/zishrodrigues/funda-serverside/master/screenshots/screen1.jpg)
+
+After selecting an image and clicking 'next' you can an overview page of the selected houses.
+
+![Moodboard page](https://raw.githubusercontent.com/zishrodrigues/funda-serverside/master/screenshots/screen2.jpg)
+
+The detail page shows some additional information and links the house page on Funda.
+
+![Moodboard page](https://raw.githubusercontent.com/zishrodrigues/funda-serverside/master/screenshots/screen3.jpg)
+
 This project uses the following packages:
 
 * Express.js
