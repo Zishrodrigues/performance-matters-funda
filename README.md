@@ -33,11 +33,21 @@ My app uses a moodboard of images as a filtering method. Select your favorite im
 
 After selecting an image and clicking 'next' you can an overview page of the selected houses.
 
-![Moodboard page](https://raw.githubusercontent.com/zishrodrigues/performance-matters-funda/master/screenshots/screen2.jpg)
+![Overview page](https://raw.githubusercontent.com/zishrodrigues/performance-matters-funda/master/screenshots/screen2.jpg)
 
 The detail page shows some additional information and links the house page on Funda.
 
-![Moodboard page](https://raw.githubusercontent.com/zishrodrigues/performance-matters-funda/master/screenshots/screen3.jpg)
+![Detail page](https://raw.githubusercontent.com/zishrodrigues/performance-matters-funda/master/screenshots/screen3.jpg)
+
+## Audit
+
+Using Service workers and serverside rendering my page has a relativly fast loading time on regular 2G.
+
+![network screenshot](https://raw.githubusercontent.com/zishrodrigues/performance-matters-funda/master/screenshots/audit1.jpg)
+
+The service worker caches the css, client-side script and moodboard images. The Funda images aren't cached as the results can vary between thousands and each try can give different results.
+
+![cache screenshot](https://raw.githubusercontent.com/zishrodrigues/performance-matters-funda/master/screenshots/audit2.jpg)
 
 This project uses the following packages:
 
