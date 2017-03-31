@@ -62,5 +62,6 @@ I use browserify to bundle my JS modules into bundle.js for client-side usage.
 
 ## Wishlist
 
-* add css
-* add clientside JS functions
+- [x] add css
+- [x] cache images
+- [ ] cache offline page
