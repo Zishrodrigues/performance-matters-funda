@@ -7,7 +7,17 @@ var cacheName = 'v1';
 var cacheFiles = [
     '/css/style.css',
     '/js/script.js',
-    '/'
+    '/images/stad1.jpg',
+    '/images/stad2.jpg',
+    '/images/stad3.jpg',
+    '/images/stad4.jpg',
+    '/images/stad5.jpg',
+    '/images/stad6.jpg',
+    '/images/stad7.jpg',
+    '/images/stad8.jpg',
+    '/images/stad9.jpg',
+    '/images/stad10.jpg',
+    '/images/stad11.jpg'
 ];
 
 self.addEventListener('install', function(e) {
